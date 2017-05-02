@@ -1,11 +1,11 @@
 #!/bin/bash
 
-workDir=`pwd`
+workDir=/opt/wikicraft
 
 case $1 in
 	"start")
 		echo "start wikicraft web server..."
-		npl -d bootstrapper="script/apps/WebServer/WebServer.lua"  root="www/" port="8099" dev="${workDir}"
+		npl bootstrapper="script/apps/WebServer/WebServer.lua"  root="www/" port="8099" dev="${workDir}"
 		;;
 	"stop")
 		echo "stop wikicraft web server..."
@@ -14,7 +14,7 @@ case $1 in
 	"restart")
 		echo "restart wikicraft web server..."
 		killall npl
-		npl -d bootstrapper="script/apps/WebServer/WebServer.lua"  root="www/" port="8099" dev="${workDir}"
+		npl bootstrapper="script/apps/WebServer/WebServer.lua"  root="www/" port="8099" dev="${workDir}"
 		;;
 	"update")
 		echo "update npl_package...."
